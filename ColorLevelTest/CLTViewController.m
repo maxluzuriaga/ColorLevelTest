@@ -66,23 +66,23 @@ dispatch_queue_t blurQueue;
 
 - (IBAction)blurScreen:(id)sender {
     if ([[self navigationController] isNavigationBarHidden]) {
-        UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.view.window.frame.size.width, self.view.frame.size.height), NO, self.view.window.screen.scale);
-        [self.view drawViewHierarchyInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-        UIImage *bgImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        NSLog(@"%f x %f", bgImage.size.width, bgImage.size.height);
-        
-        bgImage = [bgImage applyLightEffect];
-        
-        UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
-        bgImageView.frame = CGRectMake(0, 0, self.view.window.frame.size.width, self.view.frame.size.height);
-        bgImageView.tag = 542;
-        
-        [self.view addSubview:bgImageView];
+//        UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.view.window.frame.size.width, self.view.frame.size.height), NO, self.view.window.screen.scale);
+//        [self.view drawViewHierarchyInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+//        UIImage *bgImage = UIGraphicsGetImageFromCurrentImageContext();
+//        UIGraphicsEndImageContext();
+//        
+//        NSLog(@"%f x %f", bgImage.size.width, bgImage.size.height);
+//        
+//        bgImage = [bgImage applyLightEffect];
+//        
+//        UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
+//        bgImageView.frame = CGRectMake(0, 0, self.view.window.frame.size.width, self.view.frame.size.height);
+//        bgImageView.tag = 542;
+//        
+//        [self.view addSubview:bgImageView];
     } else {
-        UIView *imageView = [self.view viewWithTag:542];
-        [imageView removeFromSuperview];
+//        UIView *imageView = [self.view viewWithTag:542];
+//        [imageView removeFromSuperview];
     }
     
     [[self navigationController] setNavigationBarHidden:![[self navigationController] isNavigationBarHidden] animated:YES];
